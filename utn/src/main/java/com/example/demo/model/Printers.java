@@ -10,9 +10,9 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity(name = "printers")
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 public class Printers {
 
     @Id
