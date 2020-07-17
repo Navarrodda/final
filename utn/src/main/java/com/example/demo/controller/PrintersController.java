@@ -1,8 +1,10 @@
 package com.example.demo.controller;
 
+import com.example.demo.dto.PrintDto;
 import com.example.demo.model.Printers;
 import com.example.demo.service.PrintersService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,6 +32,11 @@ public class PrintersController {
     @PostMapping("/")
     public void  addPrinters(@RequestBody Printers printers){
         this.printersService.addPrinters(printers);
+    }
+
+    @GetMapping("/filter")
+    public ResponseEntity<List<PrintDto>> getPrintersFilter(){
+        return this.printersService.getPrintFilter();
     }
 
 }
